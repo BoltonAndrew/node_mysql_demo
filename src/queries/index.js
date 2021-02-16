@@ -14,7 +14,7 @@ const queryString = 'SELECT COUNT(*) AS total FROM users';
 exports.getTotal = async () => {
     try {
         let data = await promisifiedQuery(queryString);
-        return data;
+        return data[0].total;
     } catch (error) {
         console.log(error);
     };
