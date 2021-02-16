@@ -9,7 +9,6 @@ const connection = mysql.createConnection({
     password: process.env.DB_PASS,
 });
 
-const promisifiedQuery = promisify(connection.query).bind(connection);
+console.log(`Successfully connected to ${process.env.DB_NAME} on MySQL Server`);
 
-
-connection.end();
+exports.promisifiedQuery = promisify(connection.query).bind(connection);
